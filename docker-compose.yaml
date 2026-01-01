@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  logos-nlu-server:
+    build: .
+    image: logos-nlu-server
+    ports:
+      - "8001:8001"
+    environment:
+      - PORT=8001
+    restart: unless-stopped
+    networks:
+      - nlu-network
+
+networks:
+  nlu-network:
+    driver: bridge
+    name: nlu-network

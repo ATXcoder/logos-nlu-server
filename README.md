@@ -1,4 +1,4 @@
-# Logos NLU
+![logo.png](logo.png)
 
 **Logos NLU** is a lightweight, self-hosted Natural Language Understanding (NLU) service for intent classification and entity extraction.
 
@@ -9,6 +9,9 @@ It is designed to be:
 - ✅ Free from cloud lock-in
 
 Logos NLU focuses on **semantic intent detection using sentence embeddings**, not black-box AI pipelines.
+
+> [!WARNING]
+> This project is very alpha and under heavy development!
 
 ---
 
@@ -28,14 +31,16 @@ Logos NLU takes a different approach:
 
 > If you can read Python, you can understand Logos NLU.
 
+Logos aims to be a simple, self-hosted, offline, NLU service that you can use for internal chatbot systems.
+
 ---
 
 ## Features
 
-- 🧠 Semantic intent classification (SentenceTransformers)
+- 🧠 Semantic intent classification
 - 📦 Project-based intent storage
-- 💾 Persistent embeddings (no retrain on restart)
-- 🧩 Simple entity extraction (regex & keyword-based)
+- 💾 Persistent embeddings
+- 🧩 Simple entity extraction
 - ⚡ FastAPI-based HTTP API
 - 🧪 Easy to test and extend
 
@@ -49,20 +54,27 @@ Logos NLU intentionally does **not** aim to:
 - Perform end-to-end dialogue management
 - Hide complexity behind configuration magic
 
-This is an **NLU engine**, not a chatbot.
+This is an **NLU engine**, not a chatbot. Thought it's simple REST API makes it a great choice for use with chatbot platforms like [Typebot.io](https://typebot.io/)
 
 ---
 
 ## Installation
 
+> [!IMPORTANT]
+> Both Dockerfile and docker-compose.yaml files have been included for building and running Logos-nlu-server in docker. Note that the Dockerfile uses `Python 3.10-slim` in order to keep the image size small.
+>
+> Take caution as both files are a work in progress.
+
 ```bash
-git clone https://github.com/YOUR_USERNAME/logos-nlu.git
-cd logos-nlu
+git clone https://github.com/ATXCoder/logos-nlu-server.git
+cd logos-nlu-server
 
 python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
 
 pip install -r requirements.txt
+
+python -m spacy download en_core_web_sm
 ```
 
 ## Running the server

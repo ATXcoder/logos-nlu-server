@@ -1,9 +1,8 @@
-fastapi
-uvicorn
-sentence-transformers
-scikit-learn
-numpy
-pydantic
-spacy>=3.7.0
-https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1-py3-none-any.whl
-dateparser>=1.2.0
+fastapi==0.110.0
+uvicorn==0.27.1
+sentence-transformers==2.6.1
+scikit-learn==1.4.0
+numpy==1.26.4
+pydantic==2.6.4
+spacy==3.7.2
+dateparser==1.2.0
